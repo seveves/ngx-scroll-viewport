@@ -1,0 +1,28 @@
+{
+  "name": "ngx-scroll-viewport",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seveves/ngx-scroll-viewport.git"
+  },
+  "author": {
+    "name": "Severin Friede",
+    "email": "sevefriede@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/seveves/ngx-scroll-viewport.git/issues"
+  },
+  "main": "ngx-scroll-viewport.umd.js",
+  "module": "ngx-scroll-viewport.js",
+  "jsnext:main": "ngx-scroll-viewport.js",
+  "typings": "ngx-scroll-viewport.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}
