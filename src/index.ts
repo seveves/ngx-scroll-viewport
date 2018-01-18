@@ -1,35 +1,40 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SampleComponent } from './sample.component';
-import { SampleDirective } from './sample.directive';
-import { SamplePipe } from './sample.pipe';
-import { SampleService } from './sample.service';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+export declare const WINDOW: InjectionToken<Window>;
+
+import { ScrollViewportComponent } from './scroll-viewport.component';
+
+export * from './scroll-viewport.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    ScrollViewportComponent
   ],
   exports: [
-    SampleComponent,
-    SampleDirective,
-    SamplePipe
+    ScrollViewportComponent
+  ],
+  providers: [
+    { provide: 'DOCUMENT', useFactory: getDocument },
+    { provide: 'WINDOW', useFactory: getWindow }
   ]
 })
-export class SampleModule {
+export class ScrollViewportModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: SampleModule,
-      providers: [SampleService]
+      ngModule: ScrollViewportModule,
+      providers: []
     };
   }
+}
+
+export function getWindow(): any {
+  return (typeof window !== 'undefined') ? window : null;
+}
+
+export function getDocument(): any {
+  return (typeof document !== 'undefined') ? document : null;
 }
