@@ -56,6 +56,16 @@ Once your library is imported, you can use the component:
 </scroll-viewport>
 ```
 
+## Properties
+| Property               | Type     | Description           |
+|------------------------|----------|-----------------------|
+| **`items`**            | _any[]_  | the item source       |
+| **`rowHeight`**        | _number_ | static height of a row (prevents dynamic computation of element height) |
+| **`defaultRowHeight`** | _number_ | used as a fallback if **`rowHeight`** wasn't set and dynamic computation is not possible       |
+| **`overscan`**         | _number_ | Number of extra rows to render above and below visible list. Defaults to 10.      |
+
+
+
 ## Development
 This library was created using [generator-angular2-library](https://github.com/jvandemo/generator-angular2-library).
 
