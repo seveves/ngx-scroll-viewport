@@ -3,6 +3,11 @@ Angular component that renders homogeneous children only when visible.
 
 This library was heavily inspired by [preact-scroll-viewport](https://github.com/developit/preact-scroll-viewport)
 
+## Demo
+For a demo you can browse [this plunker](https://plnkr.co/edit/XxPjy3CmVxjVhhY46hIE?p=preview)
+
+There you can see a comparison to ```ngFor```
+
 ## Installation
 
 To install this library, run:
