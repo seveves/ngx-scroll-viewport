@@ -1,4 +1,7 @@
 # ngx-scroll-viewport
+Angular component that renders homogeneous children only when visible.
+
+This library was heavily inspired by [preact-scroll-viewport](https://github.com/developit/preact-scroll-viewport)
 
 ## Installation
 
@@ -8,15 +11,9 @@ To install this library, run:
 $ npm install ngx-scroll-viewport --save
 ```
 
-## Consuming your library
+## Consuming this library
 
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
-$ npm install ngx-scroll-viewport
-```
-
-and then from your Angular `AppModule`:
+Import into your Angular `AppModule`:
 
 ```typescript
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,8 +21,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-// Import your library
-import { SampleModule } from 'ngx-scroll-viewport';
+// Import library
+import { ScrollViewportModule } from 'ngx-scroll-viewport';
 
 @NgModule({
   declarations: [
@@ -34,8 +31,8 @@ import { SampleModule } from 'ngx-scroll-viewport';
   imports: [
     BrowserModule,
 
-    // Specify your library as an import
-    LibraryModule
+    // Specify library as an import
+    ScrollViewportModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -43,17 +40,19 @@ import { SampleModule } from 'ngx-scroll-viewport';
 export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once your library is imported, you can use the component:
 
 ```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+<!-- You can now use the library component in f.e. app.component.html -->
+<scroll-viewport [items]="items" [overscan]="20">
+  <ng-template let-item>
+    <div>{{item}}</div>
+  </ng-template>
+</scroll-viewport>
 ```
 
 ## Development
+This library was created using [generator-angular2-library](https://github.com/jvandemo/generator-angular2-library).
 
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
 
@@ -69,4 +68,4 @@ $ npm run lint
 
 ## License
 
-MIT © [Severin Friede](mailto:sevefriede@gmail.com)
+MIT
